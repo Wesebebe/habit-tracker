@@ -7,14 +7,30 @@ const HabitList = () => {
     { id: 2, name: "Read", completed: true },
   ]);
 
+  const toggleCompletion = (id) => {
+    setHabits((prevHabits) =>
+      prevHabits.map((habit) =>
+        habit.id === id ? { ...habit, completed: !habit.completed } : habit
+      )
+    );
+  };
+
   return (
     <div className="habit-list">
       <h2>Your Habits</h2>
       <ul className="list">
         {habits.map((habit) => (
           <li key={habit.id} className="habit">
-            <span>{habit.name}</span>
-            <button>{habit.completed ? "Undo" : "Complete"}</button>
+            <span
+              style={{
+                textDecoration: habit.completed ? "line-through" : "none",
+              }}
+            >
+              {habit.name}
+            </span>
+            <button onClick={() => toggleCompletion(habit.id)}>
+              {habit.completed ? "Undo" : "Complete"}
+            </button>
           </li>
         ))}
       </ul>
