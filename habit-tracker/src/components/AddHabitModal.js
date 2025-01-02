@@ -31,13 +31,13 @@ const AddHabitModal = ({ isOpen, onClose, onAddHabit }) => {
       <div className="flex justify-between">
         <button
           onClick={handleAddHabit}
-          className="bg-green-500 text-white py-1px-4 rounded hover:bg-green-600"
+          className="bg-green-500 text-white py-1 px-3 rounded hover:bg-green-600"
         >
           Add Habit
         </button>
         <button
           onClick={onClose}
-          className="bg-red-500 text-white py-1px-4 rounded hover:bg-red-600"
+          className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
         >
           Cancel
         </button>
